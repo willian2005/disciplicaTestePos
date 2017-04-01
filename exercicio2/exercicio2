@@ -1,0 +1,25 @@
+P(a, b, c){
+	
+	SE a <= 0 OR b <= 0 OR c <= 0
+		echo exception valor 0 ou > 0
+		  
+	SE a + b < c OR a + c < b OR b + c < a  
+		echo "valores nao sao validos para o triangulo"
+	
+	SE a == b == c
+		tringulo equilatero
+		
+	SE a == b OR a == c OR b == c
+		triangulo isosceles
+		
+	SE a != b AND a != c AND b != c 
+		tringulo escaleno	
+}
+
+P(1, 1, 3) - "invalido - exception"
+P(2, 2, 3) - "isosceles"
+P(2, 2, 2) - "equilatero"
+P(2, 3, 4) - "escaleno"
+P(2, 3, 3) - "isosceles"
+P(-1, 3, 2) - "valor negativo"
+P(0, 3, 4) - "valor zero" 

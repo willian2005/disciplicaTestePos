@@ -2,7 +2,11 @@ package exercicio3;
 
 import static org.junit.Assert.*;
 
+import java.time.Period;
+
+import org.joda.time.DateTime;
 import org.joda.time.IllegalFieldValueException;
+import org.joda.time.Interval;
 import org.joda.time.JodaTimePermission;
 import org.joda.time.LocalDate;
 import org.joda.time.LocalTime;
@@ -116,5 +120,16 @@ public class Exercicio3 {
 		assertEquals(59, milesec.getMinuteOfHour());
 		assertEquals(59, milesec.getSecondOfMinute());
 		assertEquals(999, milesec.getMillisOfSecond());
+	}
+	@Test
+	public void checaIntervalo() throws Exception{
+		
+		DateTime inicioAula = new DateTime(2017, 3, 31, 18, 30);
+		DateTime finalAula = new DateTime(2017, 5, 6, 18, 30);
+		Interval intervalo = new Interval(inicioAula, finalAula);
+		
+		assertTrue(intervalo.containsNow());
+		assertEquals(36, intervalo.toDuration().getStandardDays());
+		assertEquals(864, intervalo.toDuration().getStandardHours());
 	}
 }

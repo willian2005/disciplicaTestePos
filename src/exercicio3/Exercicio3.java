@@ -131,5 +131,6 @@ public class Exercicio3 {
 		assertTrue(intervalo.containsNow());
 		assertEquals(36, intervalo.toDuration().getStandardDays());
 		assertEquals(864, intervalo.toDuration().getStandardHours());
+		System.out.println(intervalo.toDuration().getStandardDays());
 	}
 }
